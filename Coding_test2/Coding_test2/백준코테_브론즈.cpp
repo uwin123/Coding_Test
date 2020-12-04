@@ -1,12 +1,19 @@
 #pragma warning(disable: 4996)
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main()
 {
-	ios::sync_with_stdio(false), cout.tie(0), cin.tie(0);
-	int a, b;
-	cin >> a >> b;
-	cout << a - b;
+	int num = 0;
+	string s;
+	cin >> s;
+	for (int i = 0; i < s.length(); i++)
+	{
+		num *= 16;
+		if (s[i] >= 'A' && s[i] <= 'F') num += s[i] - 'A' + 10;
+		else num += s[i] - '0';
+	}
+	cout << num << '\n';
 	return 0;
 }
